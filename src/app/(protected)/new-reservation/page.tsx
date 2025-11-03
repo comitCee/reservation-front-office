@@ -1,7 +1,7 @@
 import { db } from "@/lib/db"
 import { NewReservationForm } from "@/features/reservations/new-reservation-form"
 import {PageHeroSection} from "@/components/page-hero";
-import {CalendarCheck, EditIcon} from "lucide-react";
+import { EditIcon} from "lucide-react";
 import {PageHeader} from "@/components";
 
 export const metadata = {
