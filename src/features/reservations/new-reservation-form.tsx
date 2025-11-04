@@ -108,18 +108,14 @@ export function NewReservationForm({ locations }: NewReservationFormProps) {
               {locations.map((location) => (
                 <option key={location.id} value={location.id}>
                   {location.name} - {location.commission.name}
-                  {location.maxDurationHours && ` (max ${location.maxDurationHours}h)`}
+
                 </option>
               ))}
             </select>
             {errors.locationId && (
               <p className="text-xs text-red-500">{errors.locationId.message}</p>
             )}
-            {selectedLocation?.maxDurationHours && (
-              <p className="text-xs text-muted-foreground">
-                ⏱️ Durée maximale: {selectedLocation.maxDurationHours}h
-              </p>
-            )}
+           
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

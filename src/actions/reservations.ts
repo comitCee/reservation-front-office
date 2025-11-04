@@ -124,7 +124,7 @@ export async function createReservation(data: CreateReservationInput) {
   await db.reservation.create({
     data: {
       title: validated.title,
-      description: validated.description || null,
+      description: validated.description || "",
       locationId: validated.locationId,
       userId: session.user.id,
       start: validated.start,
