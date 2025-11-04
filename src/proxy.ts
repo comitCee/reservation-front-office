@@ -6,6 +6,7 @@ import {DeleteUser} from "@/actions/user";
 const publicRoutes = [
   "/",
   "/login",
+  "/logout",
   "/register",
   "/verify-otp",
   "/reset-password",
@@ -63,7 +64,7 @@ export async function proxy(request: NextRequest) {
       if(session.user.role == "STUDENT"){
         await DeleteUser(session.user.id);
       }
-      const response = NextResponse.redirect(new URL("/login?error=wrong-role", request.url))
+      const response = NextResponse.redirect(new URL("/logout?error=wrong-role", request.url))
 
       // Supprimer les cookies de session
       response.cookies.delete("better-auth.session_token")
